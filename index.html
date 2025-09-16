@@ -357,6 +357,31 @@
             to { width: var(--progress); }
         }
 
+        .education-section, .interests-section {
+            margin-top: 3rem;
+        }
+
+        .education-item, .interests-item {
+            background: rgba(26, 26, 46, 0.6);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            margin-bottom: 1.5rem;
+        }
+
+        .education-title, .interests-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-details, .interests-details {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
         /* Portfolio Section */
         .portfolio-grid {
             display: grid;
@@ -695,6 +720,86 @@
             margin-bottom: 1rem;
         }
 
+        /* Trophy Room Section */
+        .trophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: rgba(26, 26, 46, 0.6);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .cert-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid var(--border);
+            width: 80%;
+            max-width: 800px;
+            border-radius: 1rem;
+        }
+
+        .close {
+            color: var(--text-primary);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: var(--primary);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            margin-top: 1rem;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav {
@@ -737,7 +842,7 @@
         }
 
         @media (max-width: 480px) {
-            .portfolio-grid, .blog-grid {
+            .portfolio-grid, .blog-grid, .trophy-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -823,6 +928,9 @@
         <a href="#about" class="nav-item" data-section="about">
             <i class="fas fa-user"></i>
         </a>
+        <a href="#trophy-room" class="nav-item" data-section="trophy-room">
+            <i class="fas fa-trophy"></i>
+        </a>
         <a href="#portfolio" class="nav-item" data-section="portfolio">
             <i class="fas fa-briefcase"></i>
         </a>
@@ -841,12 +949,10 @@
                 <div class="hero-content">
                     <h1 class="hero-title animate-on-scroll">Uzo's Domain</h1>
                     <p class="hero-subtitle animate-on-scroll">
-                        Driven, relentless, and adaptable developer with an unyielding work ethic. 
-                        Every task is a conquest, and I aim to surpass expectations. 
-                        Welcome to my domain - witness my ascent.
+                        Versatile and motivated software developer with experience in backend development, automation, data analysis, and financial technology. Skilled in designing scalable systems, managing cloud-based infrastructures, and applying quantitative methods to solve real-world problems.
                     </p>
                     <div class="cta-buttons animate-on-scroll">
-                        <a href="Documents/Emmanuel Immanuel CV (1).docx" class="btn btn-primary">
+                        <a href="Documents/Emmanuel_Immanuel_CV.pdf" class="btn btn-primary">
                             <i class="fas fa-download"></i>
                             Download CV
                         </a>
@@ -872,17 +978,10 @@
                 <div class="about-content animate-on-scroll">
                     <h2>About Me</h2>
                     <p class="about-text">
-                        What purpose does this existence serve? People toil, only to meet their demise. 
-                        Why? I reject being a pawn in this despairing game. Instead, I embrace the life 
-                        crafted by the divine. I'm not naïve; challenges will arise, yet that's the 
-                        essence of life's sweetness — the ache that affirms our existence.
-                    </p>
-                    <p class="about-text">
-                        Welcome to my domain. Witness my ascent. I may sound audacious, but one cannot 
-                        ascend without possessing some audacity.
+                        Versatile and motivated software developer with experience in backend development, automation, data analysis, and financial technology. Skilled in designing scalable systems, managing cloud-based infrastructures, and applying quantitative methods to solve real-world problems. Actively seeking roles in backend, full-stack, or fintech development.
                     </p>
                     <div class="cta-buttons">
-                        <a href="Documents/Emmanuel Immanuel CV (1).docx" class="btn btn-primary">
+                        <a href="Documents/Emmanuel_Immanuel_CV.pdf" class="btn btn-primary">
                             <i class="fas fa-download"></i>
                             Download CV
                         </a>
@@ -891,20 +990,20 @@
                 <div class="stats-section animate-on-scroll">
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <div class="stat-number">5+</div>
-                            <div class="stat-label">Projects<br>Unity • OpenGL<br>Data Analysis</div>
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Projects<br>Completed</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">5+</div>
-                            <div class="stat-label">Languages<br>C++ • C# • Python<br>HTML • CSS • JS</div>
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">Programming<br>Languages</div>
                         </div>
                         <div class="stat-card">
                             <div class="stat-number">5+</div>
                             <div class="stat-label">Core Skills<br>Mastered</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">650+</div>
-                            <div class="stat-label">Projects<br>Completed</div>
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Cloud Platforms<br>Managed</div>
                         </div>
                     </div>
                 </div>
@@ -915,39 +1014,249 @@
                 <div class="skills-grid">
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span class="skill-name">HTML/CSS</span>
-                            <span class="skill-percentage">90%</span>
+                            <span class="skill-name">Python</span>
+                            <span class="skill-percentage">85%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 90%"></div>
+                            <div class="skill-progress" style="--progress: 85%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-header">
                             <span class="skill-name">C++</span>
-                            <span class="skill-percentage">90%</span>
+                            <span class="skill-percentage">75%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Python</span>
-                            <span class="skill-percentage">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 90%"></div>
+                            <div class="skill-progress" style="--progress: 75%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-header">
                             <span class="skill-name">C#</span>
-                            <span class="skill-percentage">90%</span>
+                            <span class="skill-percentage">70%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="--progress: 90%"></div>
+                            <div class="skill-progress" style="--progress: 70%"></div>
                         </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Java</span>
+                            <span class="skill-percentage">60%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Lua</span>
+                            <span class="skill-percentage">50%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percentage">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML/CSS</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">React</span>
+                            <span class="skill-percentage">60%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Node.js</span>
+                            <span class="skill-percentage">55%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 55%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">PHP</span>
+                            <span class="skill-percentage">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">SQL/MySQL</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Pandas/NumPy</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">MATLAB</span>
+                            <span class="skill-percentage">60%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Azure/AWS</span>
+                            <span class="skill-percentage">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Git</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="font-size: 2rem; margin: 2rem 0; text-align: center;">Methodologies & Soft Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Agile</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Unit Testing</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Version Control</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Software Documentation</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Analytical Thinking</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Communication</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Team Collaboration</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Problem Solving</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-section animate-on-scroll">
+                <h3 style="font-size: 2rem; margin-bottom: 2rem; text-align: center;">Education</h3>
+                <div class="education-item">
+                    <h4 class="education-title">BSc (Hons) Computer Games Programming (2.1)</h4>
+                    <div class="education-details">
+                        <p>De Montfort University, Oct 2020 – Sept 2023</p>
+                        <p>• Final-year project: ML-powered trading system with Python/C++ integration</p>
+                        <p>• Built C++ applications using STL, OOP, and OpenGL</p>
+                        <p>• Relevant coursework: Data Structures, Algorithms, Real-Time Systems</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <h4 class="education-title">Skill Bootcamp – Data Analysis (Python)</h4>
+                    <div class="education-details">
+                        <p>Purple Beard, Aug 2023 – Oct 2023</p>
+                        <p>• Preprocessed housing datasets and built data pipelines for visualization and insight generation</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <h4 class="education-title">Early Education</h4>
+                    <div class="education-details">
+                        <p>• Bluecoat Sixth Form, Nottingham – IT & Applied Science (Merit Merit)</p>
+                        <p>• Trinity Catholic School, Nottingham – 5 GCSEs incl. Mathematics, English, Science</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="interests-section animate-on-scroll">
+                <h3 style="font-size: 2rem; margin-bottom: 2rem; text-align: center;">Interests</h3>
+                <div class="interests-item">
+                    <div class="interests-details">
+                        <p>Financial markets, quantitative analysis, algorithm design, cloud computing, fitness, and open-source collaborations</p>
                     </div>
                 </div>
             </div>
@@ -959,12 +1268,56 @@
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2024 - Present</div>
-                        <h4 class="timeline-title">IT Administrator</h4>
+                        <div class="timeline-date">Jan 2024 – Present</div>
+                        <h4 class="timeline-title">IT Administrator/Software Developer</h4>
                         <div class="timeline-company">Anglo Skills College</div>
-                        <p>At the college I manage data and create strategies to further improve the workflow.</p>
+                        <p>• Developed and implemented PHP/MySQL CMS, increasing website engagement by 35%</p>
+                        <p>• Analyzed user behavior using traffic data—transferrable to market behavior analytics</p>
+                        <p>• Managed secure cloud systems supporting over 1,000 users with 99.9% uptime</p>
+                        <p>• Led CRM integration that streamlined upload of 1,500+ student records</p>
+                        <p>• Developed and managed fully automated Absence System to generate reports for over 100 students per day</p>
                     </div>
                 </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jan 2025 – Present</div>
+                        <h4 class="timeline-title">Independent Developer & FinTech Analyst</h4>
+                        <div class="timeline-company">Freelance Projects</div>
+                        <p>• Designed and deployed automated trading bots using machine learning techniques</p>
+                        <p>• Backtested trading strategies on time-series datasets with Python (NumPy, pandas, Matplotlib)</p>
+                        <p>• Simulated risk and performance metrics across currency pairs such as XAUUSD</p>
+                        <p>• Hosted and maintained trading systems in the cloud using AWS and low-latency pipelines</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trophy Room Section -->
+    <section class="section" id="trophy-room">
+        <div class="container">
+            <h2 style="font-size: 3rem; text-align: center; margin-bottom: 1rem; background: var(--gradient-3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;" class="animate-on-scroll">Trophy Room</h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 4rem; font-size: 1.1rem;" class="animate-on-scroll">
+                My certifications and achievements. Click on each to view details and the PDF.
+            </p>
+            <div class="trophy-grid">
+                <div class="cert-card animate-on-scroll" onclick="openModal('cert1-modal')">
+                    <h3 class="cert-title">Skill Bootcamp – Data Analysis (Python)</h3>
+                    <p class="cert-description">Issued by Purple Beard</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Cert 1 -->
+        <div id="cert1-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('cert1-modal')">&times;</span>
+                <h2>Skill Bootcamp – Data Analysis (Python)</h2>
+                <p>Completed a comprehensive bootcamp focusing on data analysis with Python, including preprocessing housing datasets and building data pipelines for visualization and insight generation.</p>
+                <iframe src="Documents/purple_beard_certificate.pdf"></iframe>
             </div>
         </div>
     </section>
@@ -974,13 +1327,48 @@
         <div class="container">
             <h2 style="font-size: 3rem; text-align: center; margin-bottom: 1rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;" class="animate-on-scroll">My Portfolio</h2>
             <p style="text-align: center; color: var(--text-secondary); margin-bottom: 4rem; font-size: 1.1rem;" class="animate-on-scroll">
-                Below I present unto you the projects that I have created. Steadfast in learning, my skills have developed and will continue to grow.
+                A showcase of my projects demonstrating skills in backend development, data analysis, and financial technology.
             </p>
-            
             <div class="portfolio-grid">
                 <div class="project-card animate-on-scroll">
                     <div class="project-image">
-                        <img src="Images/Terrain shader.jpg" alt="Advanced Shader Programming" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-1)';">
+                        <img src="Images/AIBot.png" alt="Algorithmic Trading Bot" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-2)';">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Uzo01/Trading-bot" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Algorithmic Trading Bot</h3>
+                        <p class="project-description">
+                            Designed and deployed automated trading bots using machine learning techniques. Backtested strategies on time-series datasets with Python (NumPy, pandas, Matplotlib) and simulated risk/performance metrics for currency pairs like XAUUSD.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <img src="Images/Housing_Inflation.jpg" alt="Housing Inflation Analysis" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-1)';">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Uzo01/Housing_Inflation_Analysis-" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Housing Inflation Analysis</h3>
+                        <p class="project-description">
+                            Preprocessed housing datasets and built data pipelines using Python for visualization and insight generation, completed as part of a Skill Bootcamp with Purple Beard.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <img src="Images/Terrain_shader.jpg" alt="Advanced Shader Programming" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-1)';">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://github.com/Uzo01/Adv_Shader_Programming.git" class="project-link" target="_blank">
@@ -996,10 +1384,9 @@
                         </p>
                     </div>
                 </div>
-
                 <div class="project-card animate-on-scroll">
                     <div class="project-image">
-                        <img src="Images/Opengl cube.png" alt="OpenGL Game Engine" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-2)';">
+                        <img src="Images/Opengl_cube.png" alt="OpenGL Game Engine" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-2)';">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://github.com/Uzo01/OpenGLGame" class="project-link" target="_blank">
@@ -1012,61 +1399,6 @@
                         <h3 class="project-title">OpenGL Game Engine</h3>
                         <p class="project-description">
                             A custom game engine built from scratch using OpenGL, featuring 3D rendering, physics simulation, and modular architecture for game development.
-                        </p>
-                    </div>
-                </div>
-                    <div class="project-card animate-on-scroll">
-                    <div class="project-image">
-                        <img src="Images/Opengl cube.png" alt="OpenGL Game Engine" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-2)';">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/Uzo01/OpenGLGame" class="project-link" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">OpenGL Game Engine</h3>
-                        <p class="project-description">
-                            A custom game engine built from scratch using OpenGL, featuring 3D rendering, physics simulation, and modular architecture for game development.
-                        </p>
-                    </div>
-                </div>
-                    <div class="project-card animate-on-scroll">
-                    <div class="project-image">
-                        <img src="Images/Opengl cube.png" alt="OpenGL Game Engine" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-2)';">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/Uzo01/OpenGLGame" class="project-link" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">OpenGL Game Engine</h3>
-                        <p class="project-description">
-                            A custom game engine built from scratch using OpenGL, featuring 3D rendering, physics simulation, and modular architecture for game development.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image">
-                        <video src="video/2024-04-04 18-44-36.mkv" loop muted autoplay onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-3)';"></video>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-play"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Interactive Demo</h3>
-                        <p class="project-description">
-                            Real-time interactive demonstration showcasing advanced graphics programming techniques and user interaction systems.
                         </p>
                     </div>
                 </div>
@@ -1078,7 +1410,6 @@
     <section class="section" id="blog">
         <div class="container">
             <h2 style="font-size: 3rem; text-align: center; margin-bottom: 4rem; background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;" class="animate-on-scroll">My Blog</h2>
-            
             <div class="blog-grid">
                 <article class="blog-card animate-on-scroll">
                     <div class="blog-image">
@@ -1087,10 +1418,7 @@
                     <div class="blog-content">
                         <h3 class="blog-title">What is a Universal Render Pipeline?</h3>
                         <p class="blog-excerpt">
-                            The Universal Render Pipeline is a multiplatform rendering solution built on top of the 
-                            Scriptable Render Pipeline (SRP) framework. With scalability, customizability, and a rich 
-                            feature set, URP offers you creative freedom in any type of project, from stylized visuals 
-                            to physically based rendering.
+                            The Universal Render Pipeline is a multiplatform rendering solution built on top of the Scriptable Render Pipeline (SRP) framework. With scalability, customizability, and a rich feature set, URP offers you creative freedom in any type of project, from stylized visuals to physically based rendering.
                         </p>
                     </div>
                 </article>
@@ -1105,30 +1433,26 @@
                 <div class="contact-info animate-on-scroll">
                     <h2>Let's Connect</h2>
                     <p class="contact-description">
-                        Available for freelance work in website development and assistance in game development. 
-                        Would love to be a part of future projects if you need anyone.
+                        Available for freelance work in website development, backend systems, and fintech projects. Would love to be a part of future projects if you need anyone.
                     </p>
-                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
                             <h4>Location</h4>
-                            <p>Nottingham, United Kingdom</p>
+                            <p>60 Park Road, London SW19 2HT, United Kingdom</p>
                         </div>
                     </div>
-
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-details">
                             <h4>Email</h4>
-                            <p>Uzo.immanuel40@gmail.com</p>
+                            <p>uzo.immanuel40@gmail.com</p>
                         </div>
                     </div>
-
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
@@ -1138,7 +1462,24 @@
                             <p>07848008960</p>
                         </div>
                     </div>
-
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Portfolio</h4>
+                            <p><a href="https://uzochuks.com/" target="_blank">uzochuks.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>References</h4>
+                            <p>Available upon request</p>
+                        </div>
+                    </div>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/emmanuel-immanuel/" class="social-link" target="_blank">
                             <i class="fab fa-linkedin"></i>
@@ -1151,11 +1492,9 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="contact-form animate-on-scroll">
                     <form action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="705f8619-a71f-4de5-a138-8ab3c51693fa">
-                        
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name</label>
@@ -1166,23 +1505,20 @@
                                 <input type="email" id="email" name="email" class="form-control" placeholder="Your email" required>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="subject">Subject</label>
                             <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
                         </div>
-
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" class="form-control" placeholder="Your message" rows="6" required></textarea>
                         </div>
-
                         <div class="cta-buttons">
                             <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-paper-plane"></i>
                                 Send Message
                             </button>
-                            <a href="Documents/Emmanuel Immanuel CV (1).docx" class="btn btn-secondary">
+                            <a href="Documents/Emmanuel_Immanuel_CV.pdf" class="btn btn-secondary">
                                 <i class="fas fa-download"></i>
                                 Download CV
                             </a>
@@ -1236,13 +1572,11 @@
         // Theme Toggle (placeholder for future light mode)
         const themeToggle = document.getElementById('themeToggle');
         themeToggle.addEventListener('click', () => {
-            // Theme switching logic would go here
             console.log('Theme toggle clicked');
         });
 
         // Scroll animations
         const animateElements = document.querySelectorAll('.animate-on-scroll');
-        
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1285,11 +1619,8 @@
             contactForm.addEventListener('submit', function(e) {
                 const submitBtn = this.querySelector('button[type="submit"]');
                 const originalText = submitBtn.innerHTML;
-                
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                 submitBtn.disabled = true;
-                
-                // Reset after 3 seconds (in real implementation, this would be handled by form response)
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
@@ -1297,11 +1628,10 @@
             });
         }
 
-        // Add typing animation to hero title
+        // Typing animation for hero title
         function typeWriter(element, text, speed = 100) {
             let i = 0;
             element.innerHTML = '';
-            
             function type() {
                 if (i < text.length) {
                     element.innerHTML += text.charAt(i);
@@ -1312,7 +1642,6 @@
             type();
         }
 
-        // Initialize typing animation when home section is active
         const heroTitle = document.querySelector('.hero-title');
         if (heroTitle) {
             const originalText = "Uzo's Domain";
@@ -1321,16 +1650,15 @@
             }, 1500);
         }
 
-        // Add parallax effect to background
+        // Parallax effect
         document.addEventListener('mousemove', (e) => {
             const mouseX = e.clientX / window.innerWidth;
             const mouseY = e.clientY / window.innerHeight;
-            
             document.body.style.setProperty('--mouse-x', mouseX);
             document.body.style.setProperty('--mouse-y', mouseY);
         });
 
-        // Add particle effect (simple version)
+        // Particle effect
         function createParticles() {
             const canvas = document.createElement('canvas');
             canvas.style.position = 'fixed';
@@ -1341,15 +1669,11 @@
             canvas.style.pointerEvents = 'none';
             canvas.style.zIndex = '-1';
             canvas.style.opacity = '0.1';
-            
             document.body.appendChild(canvas);
-            
             const ctx = canvas.getContext('2d');
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            
             const particles = [];
-            
             for (let i = 0; i < 50; i++) {
                 particles.push({
                     x: Math.random() * canvas.width,
@@ -1359,38 +1683,45 @@
                     speedY: (Math.random() - 0.5) * 0.5
                 });
             }
-            
             function animate() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.fillStyle = '#6366f1';
-                
                 particles.forEach(particle => {
                     particle.x += particle.speedX;
                     particle.y += particle.speedY;
-                    
                     if (particle.x > canvas.width) particle.x = 0;
                     if (particle.x < 0) particle.x = canvas.width;
                     if (particle.y > canvas.height) particle.y = 0;
                     if (particle.y < 0) particle.y = canvas.height;
-                    
                     ctx.beginPath();
                     ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
                     ctx.fill();
                 });
-                
                 requestAnimationFrame(animate);
             }
-            
             animate();
-            
             window.addEventListener('resize', () => {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
             });
         }
-        
-        // Initialize particles after loading
+
         setTimeout(createParticles, 2000);
+
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
