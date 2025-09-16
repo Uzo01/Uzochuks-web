@@ -1297,30 +1297,196 @@
     </section>
 
     <!-- Trophy Room Section -->
-    <section class="section" id="trophy-room">
-        <div class="container">
-            <h2 style="font-size: 3rem; text-align: center; margin-bottom: 1rem; background: var(--gradient-3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;" class="animate-on-scroll">Trophy Room</h2>
-            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 4rem; font-size: 1.1rem;" class="animate-on-scroll">
-                My certifications and achievements. Click on each to view details and the PDF.
-            </p>
-            <div class="trophy-grid">
-                <div class="cert-card animate-on-scroll" onclick="openModal('cert1-modal')">
-                    <h3 class="cert-title">Skill Bootcamp – Data Analysis (Python)</h3>
-                    <p class="cert-description">Issued by Purple Beard</p>
-                </div>
+<section class="section" id="trophy-room">
+    <div class="container">
+        <h2 style="font-size: 3rem; text-align: center; margin-bottom: 1rem; background: var(--gradient-3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;" class="animate-on-scroll">Trophy Room</h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 4rem; font-size: 1.1rem;" class="animate-on-scroll">
+            My certifications and achievements. Click on each to view details and the PDF.
+        </p>
+        <div class="trophy-grid">
+            <!-- Cert 1 -->
+            <div class="cert-card animate-on-scroll" onclick="openModal('cert1-modal')">
+                <h3 class="cert-title">Skill Bootcamp – Data Analysis (Python)</h3>
+                <p class="cert-description">Issued by Purple Beard</p>
             </div>
-        </div>
 
-        <!-- Modal for Cert 1 -->
-        <div id="cert1-modal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('cert1-modal')">&times;</span>
-                <h2>Skill Bootcamp – Data Analysis (Python)</h2>
-                <p>Completed a comprehensive bootcamp focusing on data analysis with Python, including preprocessing housing datasets and building data pipelines for visualization and insight generation.</p>
-                <iframe src="Documents/purple_beard_certificate.pdf"></iframe>
+            <!-- Cert 2 -->
+            <div class="cert-card animate-on-scroll" onclick="openModal('cert2-modal')">
+                <h3 class="cert-title">Cloud Computing: Understanding Core Concepts</h3>
+                <p class="cert-description">Issued by LinkedIn Learning</p>
+            </div>
+
+            <!-- Cert 3 -->
+            <div class="cert-card animate-on-scroll" onclick="openModal('cert3-modal')">
+                <h3 class="cert-title">Introduction to FinTech</h3>
+                <p class="cert-description">Issued by LinkedIn Learning</p>
+            </div>
+
+            <!-- Cert 4 -->
+            <div class="cert-card animate-on-scroll" onclick="openModal('cert4-modal')">
+                <h3 class="cert-title">Java 11+ Essential Training</h3>
+                <p class="cert-description">Issued by LinkedIn Learning</p>
+            </div>
+
+            <!-- Cert 5 -->
+            <div class="cert-card animate-on-scroll" onclick="openModal('cert5-modal')">
+                <h3 class="cert-title">Learning GitHub</h3>
+                <p class="cert-description">Issued by LinkedIn Learning</p>
+            </div>
+
+            <!-- Cert 6 -->
+            <div class="cert-card animate-on-scroll" onclick="openModal('cert6-modal')">
+                <h3 class="cert-title">Agile Foundations</h3>
+                <p class="cert-description">Issued by LinkedIn Learning</p>
+            </div>
+
+            <!-- Cert 7 -->
+            <div class="cert-card animate-on-scroll" onclick="openModal('cert7-modal')">
+                <h3 class="cert-title">C++ Essential Training</h3>
+                <p class="cert-description">Issued by LinkedIn Learning</p>
+            </div>
+
+            <!-- Cert 8 -->
+            <div class="cert-card animate-on-scroll" onclick="openModal('cert8-modal')">
+                <h3 class="cert-title">Python Essential Training</h3>
+                <p class="cert-description">Issued by LinkedIn Learning</p>
+            </div>
+
+            <!-- Cert 9 -->
+            <div class="cert-card animate-on-scroll" onclick="openModal('cert9-modal')">
+                <h3 class="cert-title">Software Architecture Foundations</h3>
+                <p class="cert-description">Issued by LinkedIn Learning</p>
+            </div>
+
+            <!-- Cert 10 -->
+            <div class="cert-card animate-on-scroll" onclick="openModal('cert10-modal')">
+                <h3 class="cert-title">Blockchain Basics</h3>
+                <p class="cert-description">Issued by LinkedIn Learning</p>
+            </div>
+
+            <!-- Cert 11 -->
+            <div class="cert-card animate-on-scroll" onclick="openModal('cert11-modal')">
+                <h3 class="cert-title">AI in FinTech Essential Training</h3>
+                <p class="cert-description">Issued by LinkedIn Learning</p>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Modal for Cert 1 -->
+    <div id="cert1-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert1-modal')">&times;</span>
+            <h2>Skill Bootcamp – Data Analysis (Python)</h2>
+            <p>Comprehensive bootcamp focusing on data analysis with Python, including preprocessing housing datasets and building data pipelines for visualization and insight generation.</p>
+            <iframe src="/Certification/Data Analysis.pdf"></iframe>
+        </div>
+    </div>
+
+    <!-- Modal for Cert 2 -->
+    <div id="cert2-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert2-modal')">&times;</span>
+            <h2>Cloud Computing: Understanding Core Concepts</h2>
+            <p>Course completed Sep 08, 2025. Covered key fundamentals of cloud computing, infrastructure, and IT frameworks. <br><b>Skills:</b> Cloud Computing</p>
+            <iframe src="/Certification/CertificateOfCompletion_Cloud Computing Understanding Core Concepts.pdf"></iframe>
+        </div>
+    </div>
+
+    <!-- Modal for Cert 3 -->
+    <div id="cert3-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert3-modal')">&times;</span>
+            <h2>Introduction to FinTech</h2>
+            <p>Course completed Aug 18, 2025. Explored financial technology fundamentals, innovations, and real-world applications. <br><b>Skills:</b> FinTech</p>
+            <iframe src="/Certification/CertificateOfCompletion_Introduction to Fintech.pdf"></iframe>
+        </div>
+    </div>
+
+    <!-- Modal for Cert 4 -->
+    <div id="cert4-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert4-modal')">&times;</span>
+            <h2>Java 11+ Essential Training</h2>
+            <p>Course completed Sep 04, 2025. Focused on core Java programming concepts and development skills. <br><b>Skills:</b> Java</p>
+            <iframe src="/Certification/CertificateOfCompletion_Java 11 Essential Training.pdf"></iframe>
+        </div>
+    </div>
+
+    <!-- Modal for Cert 5 -->
+    <div id="cert5-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert5-modal')">&times;</span>
+            <h2>Learning GitHub</h2>
+            <p>Course completed Sep 11, 2025. Learned GitHub version control, repositories, collaboration workflows. <br><b>Skills:</b> GitHub</p>
+            <iframe src="/Certification/CertificateOfCompletion_Learning GitHub.pdf"></iframe>
+        </div>
+    </div>
+
+    <!-- Modal for Cert 6 -->
+    <div id="cert6-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert6-modal')">&times;</span>
+            <h2>Agile Foundations</h2>
+            <p>Course completed Sep 10, 2025. Focused on Agile methodologies, Scrum, and project management foundations. <br><b>Skills:</b> Agile Methodologies, Project Management</p>
+            <iframe src="/Certification/CertificateOfCompletion_Agile Foundations (2).pdf"></iframe>
+        </div>
+    </div>
+
+    <!-- Modal for Cert 7 -->
+    <div id="cert7-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert7-modal')">&times;</span>
+            <h2>C++ Essential Training</h2>
+            <p>Course completed Aug 31, 2025. Focused on C++ programming fundamentals and practical applications. 
+            <br><b>Skills:</b> C++</p>
+            <iframe src="/Certification/CertificateOfCompletion_C Essential Training.pdf"></iframe>
+        </div>
+    </div>
+
+    <!-- Modal for Cert 8 -->
+    <div id="cert8-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert8-modal')">&times;</span>
+            <h2>Python Essential Training</h2>
+            <p>Course completed Aug 25, 2025. Covered Python programming basics, best practices, and applications. 
+            <br><b>Skills:</b> Python</p>
+            <iframe src="/Certification/CertificateOfCompletion_Python Essential Training.pdf"></iframe>
+        </div>
+    </div>
+
+    <!-- Modal for Cert 9 -->
+    <div id="cert9-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert9-modal')">&times;</span>
+            <h2>Software Architecture Foundations</h2>
+            <p>Course completed Sep 09, 2025. Focused on foundational principles of software architecture. 
+            <br><b>Skills:</b> Software Architecture</p>
+            <iframe src="/Certification/CertificateOfCompletion_Software Architecture Foundations.pdf"></iframe>
+        </div>
+    </div>
+
+    <!-- Modal for Cert 10 -->
+    <div id="cert10-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert10-modal')">&times;</span>
+            <h2>Blockchain Basics</h2>
+            <p>Course completed Sep 01, 2025. Introduction to blockchain technology and cryptocurrency concepts. 
+            <br><b>Skills:</b> Blockchain, Cryptocurrency</p>
+            <iframe src="/Certification/CertificateOfCompletion_Blockchain Basics.pdf"></iframe>
+        </div>
+    </div>
+    <!-- Modal for Cert 11 -->
+    <div id="cert11-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cert11-modal')">&times;</span>
+            <h2>AI in FinTech Essential Training</h2>
+            <p>Course completed Aug 26, 2025. Explored how AI is applied within the financial technology sector, 
+            covering innovations, risk management, and automation. 
+            <br><b>Skills:</b> FinTech, Artificial Intelligence</p>
+            <iframe src="/Certification/CertificateOfCompletion_AI in Fintech Essential Training.pdf"></iframe>
+        </div>
+    </div>
+</section>
 
     <!-- Portfolio Section -->
     <section class="section" id="portfolio">
@@ -1350,7 +1516,7 @@
                 </div>
                 <div class="project-card animate-on-scroll">
                     <div class="project-image">
-                        <img src="Images/Housing_Inflation.jpg" alt="Housing Inflation Analysis" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-1)';">
+                        <img src="/Images/housing.jpg" alt="Housing Inflation Analysis" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-1)';">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://github.com/Uzo01/Housing_Inflation_Analysis-" class="project-link" target="_blank">
@@ -1368,7 +1534,7 @@
                 </div>
                 <div class="project-card animate-on-scroll">
                     <div class="project-image">
-                        <img src="Images/Terrain_shader.jpg" alt="Advanced Shader Programming" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-1)';">
+                        <img src="/Images/GPU_img.jpg" alt="Advanced Shader Programming" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-1)';">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://github.com/Uzo01/Adv_Shader_Programming.git" class="project-link" target="_blank">
@@ -1386,7 +1552,7 @@
                 </div>
                 <div class="project-card animate-on-scroll">
                     <div class="project-image">
-                        <img src="Images/Opengl_cube.png" alt="OpenGL Game Engine" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-2)';">
+                        <img src="/Images/Opengl cube.png" alt="OpenGL Game Engine" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-2)';">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://github.com/Uzo01/OpenGLGame" class="project-link" target="_blank">
@@ -1406,25 +1572,84 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section class="section" id="blog">
-        <div class="container">
-            <h2 style="font-size: 3rem; text-align: center; margin-bottom: 4rem; background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;" class="animate-on-scroll">My Blog</h2>
-            <div class="blog-grid">
-                <article class="blog-card animate-on-scroll">
-                    <div class="blog-image">
-                        <img src="Images/URP.jpg" alt="Universal Render Pipeline" onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-1)';">
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title">What is a Universal Render Pipeline?</h3>
-                        <p class="blog-excerpt">
-                            The Universal Render Pipeline is a multiplatform rendering solution built on top of the Scriptable Render Pipeline (SRP) framework. With scalability, customizability, and a rich feature set, URP offers you creative freedom in any type of project, from stylized visuals to physically based rendering.
-                        </p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+   <!-- Blog Section -->
+   <!-- Notion Iframes Section -->
+<section class="section" id="notion-embeds">
+  <div class="container">
+    <h2
+      style="font-size: 3rem; text-align: center; margin-bottom: 4rem; background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
+      class="animate-on-scroll">
+      Resources
+    </h2>
+
+    <div class="blog-grid">
+
+      <!-- Embed 1 -->
+      <div class="blog-card animate-on-scroll"
+           style="overflow: hidden; border-radius: 1.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.15); background: var(--card-bg); padding: 0;">
+        <iframe src="https://gusty-petunia-679.notion.site/ebd/262351f04d2280ca83ade088a9f267e6"
+                class="blog-iframe"
+                frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <!-- Embed 2 -->
+      <div class="blog-card animate-on-scroll"
+           style="overflow: hidden; border-radius: 1.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.15); background: var(--card-bg); padding: 0;">
+        <iframe src="https://gusty-petunia-679.notion.site/ebd/25b351f04d2280a5943bd39ee946bc61"
+                class="blog-iframe"
+                frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <!-- Embed 3 -->
+      <div class="blog-card animate-on-scroll"
+           style="overflow: hidden; border-radius: 1.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.15); background: var(--card-bg); padding: 0;">
+        <iframe src="https://gusty-petunia-679.notion.site/ebd/25d351f04d2280dabdd4d54a7d128ba8"
+                class="blog-iframe"
+                frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <!-- Embed 4 -->
+      <div class="blog-card animate-on-scroll"
+           style="overflow: hidden; border-radius: 1.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.15); background: var(--card-bg); padding: 0;">
+        <iframe src="https://gusty-petunia-679.notion.site/ebd/25e351f04d2280d7a7e8f8a2637dc9e6"
+                class="blog-iframe"
+                frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <!-- Embed 5 (duplicate of 1) -->
+      <div class="blog-card animate-on-scroll"
+           style="overflow: hidden; border-radius: 1.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.15); background: var(--card-bg); padding: 0;">
+        <iframe src="https://gusty-petunia-679.notion.site/ebd/262351f04d2280ca83ade088a9f267e6"
+                class="blog-iframe"
+                frameborder="0" allowfullscreen></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .blog-iframe {
+    border: none;
+    display: block;
+    width: 100%;
+    height: 400px; /* smaller default */
+    border-radius: 1.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .blog-iframe { height: 350px; }
+  }
+
+  @media (max-width: 768px) {
+    .blog-iframe { height: 300px; }
+  }
+
+  @media (max-width: 480px) {
+    .blog-iframe { height: 250px; }
+  }
+</style>
+
 
     <!-- Contact Section -->
     <section class="section" id="contact">
