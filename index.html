@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uzo Immanuel - Software Developer Portfolio | Backend, FinTech, Data Analysis">
+    <meta name="author" content="Uzo Immanuel">
+    <meta name="theme-color" content="#0f0f23">
+    <title>Uzo's Domain - Portfolio</title>
+    
+    <!-- Preconnect & Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (defer) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="/styles/styles.css">
+    
+    <!-- Favicon (add yours) -->
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading" aria-hidden="true">
+        <div class="loader" aria-label="Loading"></div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <template id="nav-template">
+            <a href="#" class="nav-item" data-section="">
+                <i class="fas"></i>
+                <span class="sr-only"></span>
+            </a>
+        </template>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home -->
+        <section class="section active" id="home" aria-labelledby="home-title">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1 id="home-title" class="hero-title animate-on-scroll">Uzo's Domain</h1>
+                        <p class="hero-subtitle animate-on-scroll">
+                            Versatile software developer skilled in backend, automation, data analysis, and FinTech.
+                        </p>
+                        <div class="cta-buttons animate-on-scroll">
+                            <a href="Documents/CV Emmanuel I.pdf" class="btn btn-primary" download>
+                                <i class="fas fa-download"></i> Download CV
+                            </a>
+                            <a href="#portfolio" class="btn btn-secondary">
+                                <i class="fas fa-rocket"></i> View Projects
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image animate-on-scroll">
+                        <div class="hero-avatar">
+                            <img src="Images/GPU_img.jpg" alt="Uzo's profile photo" loading="lazy"
+                                 onerror="this.style.display='none';">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="section" id="about" aria-labelledby="about-title">
+            <div class="container">
+                <h2 id="about-title" class="section-title animate-on-scroll">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-content">
+                        <p class="about-text animate-on-scroll">
+                            Actively seeking backend, full-stack, or fintech roles.
+                        </p>
+                        <a href="Documents/CV Emmanuel I.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                    <div class="stats-section animate-on-scroll">
+                        <div class="stats-grid" id="stats-grid"></div>
+                    </div>
+                </div>
+
+                <!-- Skills (data-driven) -->
+                <div class="skills-section animate-on-scroll">
+                    <h3 class="section-title">Technical Skills</h3>
+                    <div class="skills-grid" id="tech-skills"></div>
+                    <h3 class="section-title">Methodologies & Soft Skills</h3>
+                    <div class="skills-grid" id="soft-skills"></div>
+                </div>
+
+                <!-- Education, Interests, Timeline -->
+                <div id="about-details"></div>
+            </div>
+        </section>
+
+        <!-- Trophy Room -->
+        <section class="section" id="trophy-room" aria-labelledby="trophy-title">
+            <div class="container">
+                <h2 id="trophy-title" class="section-title animate-on-scroll">Trophy Room</h2>
+                <p class="text-center animate-on-scroll">
+                    Click certificates to view PDFs.
+                </p>
+                <div class="trophy-grid" id="cert-grid"></div>
+            </div>
+            <div id="modals"></div>
+        </section>
+
+        <!-- Portfolio -->
+        <section class="section" id="portfolio" aria-labelledby="portfolio-title">
+            <div class="container">
+                <h2 id="portfolio-title" class="section-title animate-on-scroll">My Portfolio</h2>
+                <p class="text-center animate-on-scroll" style="color: var(--text-secondary); margin-bottom: 4rem; font-size: 1.1rem;">
+                    A showcase of my projects in backend, desktop apps, fintech, and data tools.
+                </p>
+                <div class="portfolio-grid" id="projects-grid"></div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section" id="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 id="contact-title" class="section-title animate-on-scroll">Let's Connect</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <p class="contact-description animate-on-scroll">
+                            Available for freelance in web dev, backend, and fintech.
+                        </p>
+                        <div id="contact-details"></div>
+                        <div class="social-links" id="social-links"></div>
+                    </div>
+                    <div class="contact-form animate-on-scroll">
+                        <form action="https://api.web3forms.com/submit" method="POST" novalidate>
+                            <input type="hidden" name="access_key" value="705f8619-a71f-4de5-a138-8ab3c51693fa">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" required placeholder="Your name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required placeholder="Your email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required rows="6" placeholder="Your message"></textarea>
+                            </div>
+                            <div class="cta-buttons">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane"></i> Send
+                                </button>
+                                <a href="Documents/CV Emmanuel I.pdf" class="btn btn-secondary" download>
+                                    <i class="fas fa-download"></i> CV
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Deferred JS -->
+    <script defer>
+        // Data (easy to update)
+        const data = {
+            nav: [
+                { id: 'home', icon: 'fa-home', label: 'Home' },
+                { id: 'about', icon: 'fa-user', label: 'About' },
+                { id: 'trophy-room', icon: 'fa-trophy', label: 'Trophies' },
+                { id: 'portfolio', icon: 'fa-briefcase', label: 'Portfolio' },
+                { id: 'blog', icon: 'fa-newspaper', label: 'Blog' },
+                { id: 'contact', icon: 'fa-envelope', label: 'Contact' }
+            ],
+            stats: [
+                { num: '15+', label: 'Projects<br>Completed' },
+                { num: '6', label: 'Languages' },
+                { num: '5+', label: 'Core Skills' },
+                { num: '2', label: 'Cloud Platforms' }
+            ],
+            techSkills: [
+                ['Python', 85], ['C++', 75], ['C#', 70], ['Java', 60], ['Lua', 50],
+                ['JavaScript', 65], ['HTML/CSS', 70], ['React', 60], ['Node.js', 55],
+                ['PHP', 65], ['SQL/MySQL', 70], ['Pandas/NumPy', 80], ['MATLAB', 60],
+                ['Azure/AWS', 65], ['Git', 75]
+            ],
+            softSkills: [
+                ['Agile', 80], ['Unit Testing', 70], ['Version Control', 75],
+                ['Documentation', 70], ['Analytical Thinking', 85], ['Communication', 80],
+                ['Team Collaboration', 80], ['Problem Solving', 85]
+            ],
+            education: [
+                { title: 'BSc Computer Games Programming (2.1)', org: 'De Montfort University', date: 'Oct 2020 – Sept 2023', points: ['ML trading system', 'C++ STL/OOP/OpenGL', 'Data Structures'] },
+                { title: 'Data Analysis Bootcamp', org: 'Purple Beard', date: 'Aug–Oct 2023', points: ['Housing data pipelines'] },
+                { title: 'Early Education', points: ['Bluecoat Sixth Form (IT & Science)', 'Trinity Catholic (5 GCSEs)'] }
+            ],
+            interests: 'Financial markets, quant analysis, algorithms, cloud, fitness, open-source',
+            timeline: [
+                { date: 'Jan 2024 – Present', title: 'IT Admin/Developer', company: 'Anglo Skills College', points: ['PHP CMS (+35% engagement)', 'Cloud (99.9% uptime)', 'CRM & Absence System'] },
+                { date: 'Jan 2025 – Present', title: 'FinTech Analyst', company: 'Freelance', points: ['ML trading bots', 'Backtesting (XAUUSD)', 'AWS pipelines'] }
+            ],
+            certs: [
+                { title: 'Data Analysis (Python)', issuer: 'Purple Beard', file: 'Data Analysis.pdf', desc: 'Housing data pipelines', date: '' },
+                { title: 'Cloud Computing', issuer: 'LinkedIn', file: 'CertificateOfCompletion_Cloud Computing Understanding Core Concepts.pdf', date: 'Sep 08, 2025' },
+                { title: 'Intro to FinTech', issuer: 'LinkedIn', file: 'CertificateOfCompletion_Introduction to Fintech.pdf', date: 'Aug 18, 2025' },
+                { title: 'Java 11+', issuer: 'LinkedIn', file: 'CertificateOfCompletion_Java 11 Essential Training.pdf', date: 'Sep 04, 2025' },
+                { title: 'GitHub', issuer: 'LinkedIn', file: 'CertificateOfCompletion_Learning GitHub.pdf', date: 'Sep 11, 2025' },
+                { title: 'Agile', issuer: 'LinkedIn', file: 'CertificateOfCompletion_Agile Foundations (2).pdf', date: 'Sep 10, 2025' },
+                { title: 'C++', issuer: 'LinkedIn', file: 'CertificateOfCompletion_C Essential Training.pdf', date: 'Aug 31, 2025' },
+                { title: 'Python', issuer: 'LinkedIn', file: 'CertificateOfCompletion_Python Essential Training.pdf', date: 'Aug 25, 2025' },
+                { title: 'Software Architecture', issuer: 'LinkedIn', file: 'CertificateOfCompletion_Software Architecture Foundations.pdf', date: 'Sep 09, 2025' },
+                { title: 'Blockchain', issuer: 'LinkedIn', file: 'CertificateOfCompletion_Blockchain Basics.pdf', date: 'Sep 01, 2025' },
+                { title: 'AI in FinTech', issuer: 'LinkedIn', file: 'CertificateOfCompletion_AI in Fintech Essential Training.pdf', date: 'Aug 26, 2025' },
+                // NEW CERTIFICATE ADDED
+                { 
+                    title: 'Algorithmic Trading A-Z with Python, Machine Learning & AWS', 
+                    issuer: 'Udemy', 
+                    file: 'Algorithmic Trading A-Z with Python, Machine Learning & AWS.pdf', 
+                    desc: 'Comprehensive algorithmic trading strategies using Python, ML models, and AWS deployment', 
+                    date: 'Nov 2025' 
+                }
+            ],
+            projects: [
+                { img: 'Images/AIBot.png', alt: 'Trading Bot', title: 'Algorithmic Trading Bot', desc: 'ML-powered bots with backtesting on XAUUSD using Python (NumPy, pandas, Matplotlib)', github: 'https://github.com/Uzo01/Trading-bot' },
+                { img: 'Images/housing.jpg', alt: 'Housing Analysis', title: 'Housing Inflation Analysis', desc: 'Python data pipelines for visualization and insights (Skill Bootcamp)', github: 'https://github.com/Uzo01/Housing_Inflation_Analysis-' },
+                { img: 'Images/GPU_img.jpg', alt: 'Shaders', title: 'Advanced Shader Programming', desc: 'Procedural terrain with lighting and optimization in real-time graphics', github: 'https://github.com/Uzo01/Adv_Shader_Programming.git' },
+                { img: 'Images/Opengl cube.png', alt: 'OpenGL Engine', title: 'OpenGL Game Engine', desc: 'Custom 3D engine with physics and modular architecture', github: 'https://github.com/Uzo01/OpenGLGame' },
+                { img: 'Images/Bank System.png', alt: 'C++ Bank System', title: 'C++ Bank Management System', desc: 'Desktop app with ImGui GUI, OOP, deposits/withdrawals, transfers, CSV export', github: 'https://github.com/Uzo01/cpp-bank-system' },
+                { img: 'Images/Stock Tracker.png', alt: 'Stock Tracker', title: 'Stock Tracker', desc: 'Real-time stock monitoring and analysis tool', github: 'https://github.com/Uzo01/stock-tracker' },
+                { img: 'Images/Expense Tracker.png', alt: 'Expense Tracker', title: 'Expense Tracker (Java)', desc: 'Java-based personal finance app with VS Code workspace', github: 'https://github.com/Uzo01/expense-tracker' },
+                { img: 'Images/gold trading bot.png', alt: 'TradingBotProject', title: 'TradingBotProject', desc: 'Advanced trading bot framework for automated strategies', github: 'https://github.com/Uzo01/TradingBotProject' }
+            ],
+            contact: [
+                { icon: 'fa-map-marker-alt', label: 'Location', value: '60 Park Road, London SW19 2HT, UK' },
+                { icon: 'fa-envelope', label: 'Email', value: '<a href="mailto:uzo.immanuel40@gmail.com">uzo.immanuel40@gmail.com</a>' },
+                { icon: 'fa-phone', label: 'Mobile', value: '07848008960' },
+                { icon: 'fa-globe', label: 'Site', value: '<a href="https://uzochuks.com/" target="_blank">uzochuks.com</a>' },
+                { icon: 'fa-info-circle', label: 'Refs', value: 'Available on request' }
+            ],
+            social: [
+                { href: 'https://www.linkedin.com/in/emmanuel-immanuel/', icon: 'fa-linkedin' },
+                { href: 'https://discordapp.com/users/uzo.soj/', icon: 'fa-discord' },
+                { href: 'https://github.com/Uzo01', icon: 'fa-github' }
+            ]
+        };
+
+        // DOM Ready
+        document.addEventListener('DOMContentLoaded', () => {
+            initNav();
+            initStats();
+            initSkills('tech-skills', data.techSkills);
+            initSkills('soft-skills', data.softSkills);
+            initAboutDetails();
+            initCerts();
+            initProjects();
+            initContact();
+            initObservers();
+            initModals();
+            initForm();
+            initParticles();
+            startTyping();
+        });
+
+        // Navigation
+        function initNav() {
+            const nav = document.querySelector('.nav');
+            const tmpl = document.getElementById('nav-template').content;
+            data.nav.forEach((item, i) => {
+                const clone = tmpl.cloneNode(true);
+                const a = clone.querySelector('a');
+                a.href = `#${item.id}`;
+                a.dataset.section = item.id;
+                a.querySelector('i').className = `fas ${item.icon}`;
+                a.querySelector('.sr-only').textContent = item.label;
+                if (i === 0) a.classList.add('active');
+                nav.appendChild(clone);
+            });
+            nav.addEventListener('click', e => {
+                const link = e.target.closest('a');
+                if (!link) return;
+                e.preventDefault();
+                showSection(link.dataset.section);
+            });
+        }
+
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.toggle('active', s.id === id));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.section === id));
+            history.pushState(null, '', `#${id}`);
+        }
+
+        // Stats
+        function initStats() {
+            const grid = document.getElementById('stats-grid');
+            data.stats.forEach(s => {
+                grid.innerHTML += `
+                    <div class="stat-card">
+                        <div class="stat-number">${s.num}</div>
+                        <div class="stat-label">${s.label}</div>
+                    </div>`;
+            });
+        }
+
+        // Skills
+        function initSkills(containerId, skills) {
+            const container = document.getElementById(containerId);
+            skills.forEach(([name, pct]) => {
+                container.innerHTML += `
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">${name}</span>
+                            <span class="skill-percentage">${pct}%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--progress: ${pct}%"></div>
+                        </div>
+                    </div>`;
+            });
+        }
+
+        // About Details (Education, Interests, Timeline)
+        function initAboutDetails() {
+            const container = document.getElementById('about-details');
+            let html = '<div class="education-section animate-on-scroll"><h3 class="section-title">Education</h3>';
+            data.education.forEach(e => {
+                html += `<div class="education-item">
+                    <h4 class="education-title">${e.title}</h4>
+                    <div class="education-details">
+                        ${e.org ? `<p>${e.org}, ${e.date}</p>` : ''}
+                        ${e.points ? e.points.map(p => `<p>• ${p}</p>`).join('') : ''}
+                    </div></div>`;
+            });
+            html += '</div>';
+
+            html += `<div class="interests-section animate-on-scroll">
+                <h3 class="section-title">Interests</h3>
+                <div class="interests-item">
+                    <div class="interests-details"><p>${data.interests}</p></div>
+                </div></div>`;
+
+            html += `<div class="timeline animate-on-scroll">
+                <h3 class="section-title">Experience</h3>`;
+            data.timeline.forEach(t => {
+                html += `<div class="timeline-item">
+                    <div class="timeline-marker"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">${t.date}</div>
+                        <h4 class="timeline-title">${t.title}</h4>
+                        <div class="timeline-company">${t.company}</div>
+                        ${t.points.map(p => `<p>• ${p}</p>`).join('')}
+                    </div></div>`;
+            });
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        // Certificates
+        function initCerts() {
+            const grid = document.getElementById('cert-grid');
+            const modals = document.getElementById('modals');
+            data.certs.forEach((c, i) => {
+                const id = `cert${i + 1}-modal`;
+                grid.innerHTML += `
+                    <div class="cert-card animate-on-scroll" onclick="openModal('${id}')" tabindex="0" role="button" aria-label="View ${c.title}">
+                        <h3 class="cert-title">${c.title}</h3>
+                        <p class="cert-description">Issued by ${c.issuer}</p>
+                    </div>`;
+                modals.innerHTML += `
+                    <div id="${id}" class="modal" tabindex="-1">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('${id}')" tabindex="0" role="button" aria-label="Close">×</span>
+                            <h2>${c.title}</h2>
+                            <p>${c.desc} ${c.date ? `<br>Completed: ${c.date}` : ''}</p>
+                            <iframe src="/Certification/${c.file}" loading="lazy"></iframe>
+                        </div>
+                    </div>`;
+            });
+        }
+
+        // Projects
+        function initProjects() {
+            const grid = document.getElementById('projects-grid');
+            data.projects.forEach(p => {
+                grid.innerHTML += `
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="${p.img}" alt="${p.alt}" loading="lazy"
+                                 onerror="this.style.display='none'; this.parentNode.style.background='var(--gradient-2)';">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="${p.github}" class="project-link" target="_blank" aria-label="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">${p.title}</h3>
+                            <p class="project-description">${p.desc}</p>
+                        </div>
+                    </div>`;
+            });
+        }
+
+        // Contact
+        function initContact() {
+            const details = document.getElementById('contact-details');
+            data.contact.forEach(c => {
+                details.innerHTML += `
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas ${c.icon}"></i></div>
+                        <div class="contact-details">
+                            <h4>${c.label}</h4>
+                            <p>${c.value}</p>
+                        </div>
+                    </div>`;
+            });
+            const social = document.getElementById('social-links');
+            data.social.forEach(s => {
+                social.innerHTML += `
+                    <a href="${s.href}" class="social-link" target="_blank" aria-label="${s.icon.split('-')[1]}">
+                        <i class="fab ${s.icon}"></i>
+                    </a>`;
+            });
+        }
+
+        // Observers
+        function initObservers() {
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.classList.add('visible');
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px' });
+            document.querySelectorAll('.animate-on-scroll').forEach(el => io.observe(el));
+
+            const skillIO = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.style.animationPlayState = 'running';
+                });
+            }, { threshold: 0.5 });
+            document.querySelectorAll('.skill-progress').forEach(bar => skillIO.observe(bar));
+        }
+
+        // Modals
+        function initModals() {
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') document.querySelectorAll('.modal[style*="block"]').forEach(m => closeModal(m.id));
+            });
+        }
+        window.openModal = id => {
+            const modal = document.getElementById(id);
+            modal.style.display = 'block';
+            modal.focus();
+        };
+        window.closeModal = id => document.getElementById(id).style.display = 'none';
+        window.addEventListener('click', e => {
+            if (e.target.classList.contains('modal')) e.target.style.display = 'none';
+        });
+
+        // Form
+        function initForm() {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', e => {
+                if (!form.checkValidity()) return;
+                const btn = form.querySelector('button');
+                const txt = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                btn.disabled = true;
+                setTimeout(() => {
+                    btn.innerHTML = txt;
+                    btn.disabled = false;
+                    form.reset();
+                    alert('Message sent! (Demo)');
+                }, 2000);
+            });
+        }
+
+        // Particles
+        function initParticles() {
+            const canvas = document.createElement('canvas');
+            Object.assign(canvas.style, {
+                position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
+                pointerEvents: 'none', zIndex: -1, opacity: 0.1
+            });
+            document.body.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+            resize();
+            const particles = Array.from({length: 50}, () => ({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 2 + 1,
+                speedX: (Math.random() - 0.5) * 0.5,
+                speedY: (Math.random() - 0.5) * 0.5
+            }));
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#6366f1';
+                particles.forEach(p => {
+                    p.x += p.speedX; p.y += p.speedY;
+                    if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+            window.addEventListener('resize', resize);
+            function resize() {
+                canvas.width = innerWidth;
+                canvas.height = innerHeight;
+            }
+        }
+
+        // Typing
+        function startTyping() {
+            const el = document.querySelector('.hero-title');
+            const text = el.textContent;
+            el.textContent = '';
+            let i = 0;
+            setTimeout(() => {
+                const type = () => {
+                    if (i < text.length) {
+                        el.textContent += text[i++];
+                        setTimeout(type, 150);
+                    }
+                };
+                type();
+            }, 1500);
+        }
+
+        // Loading fade
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('fade-out');
+            }, 1000);
+        });
+    </script>
+
+    <noscript>JavaScript is required for animations and navigation.</noscript>
+    <style>
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+        .text-center { text-align: center; }
+        .section-title { font-size: 2rem; text-align: center; margin: 2rem 0; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    </style>
+</body>
+</html>
